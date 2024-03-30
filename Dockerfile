@@ -1,3 +1,4 @@
+FROM https://github.com/alragi0/Booot.git
 
 RUN git clone https://github.com/alragi0/Booot.git /root/mover
 

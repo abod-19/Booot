@@ -1,4 +1,4 @@
-FROM alragi0/Booot
+FROM alragi0/Booot:slim-buster
 
 RUN git clone https://github.com/alragi0/Booot.git /root/mover
 

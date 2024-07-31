@@ -5,7 +5,7 @@ import asyncio
 import json
 import configparser
 from time import sleep
-
+import uvloop
 import requests
 from pyrogram.errors import FloodWait, UserPrivacyRestricted, UserRestricted, PeerFlood, UserNotMutualContact, UserChannelsTooMuch
 from pyrogram.raw.functions.chatlists import CheckChatlistInvite, JoinChatlistInvite,LeaveChatlist

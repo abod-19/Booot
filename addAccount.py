@@ -321,6 +321,3 @@ async def Controll():
 		print(ListUsers);
 
 asyncio.get_event_loop().run_until_complete(Controll());
-
-
-uvloop.install()
